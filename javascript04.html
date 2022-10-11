@@ -8,44 +8,53 @@
     
     <script>
     //사용자 정의 객체
-    var man1 = {num:1, name:"강병수", style:"잘생김", jumsu:100};   //임의의 객체1
-    document.write("번호 : "+man1.num+", 이름 : "+man1.name);
-
-    function Animal(name,age,color){    //Constructor(생성자)
+    var man1 = {num:1, name:"김기태", style:"잘생김", jumsu:100}; //임의의 객체1
+    function Animal(name, age, color){  //Constructor(생성자)
         this.name = name;
         this.age = age;
         this.color = color;
-        this.cry = function(sound){
+        this.cry = function(sound){     //메소드
             document.write(sound+"<br>");
         }
     }
-    var myCat = new Animal("양이",5,"black");   //Animal클래스로부터 얻어진 객체1
-    document.write(myCat.name+","+myCat.age+","+myCat.color+"<br>");
-    //속성 추가
-    myCat.family ="페르시앙";
-    myCat.cry("애옹애옹");
+    var myCat = new Animal("양이", 5, "black"); //Animal클래로부터 얻어진 객체1
+    myCat.family = "페르시안";      //속성 추가
+    myCat.toString = function(){
+        document.write(this.name+", "+this.age+", "+this.color+this.family+"<br>");
+    };
+    for(var key in myCat){
+        document.write(key+"<br>");1
+    }
+
+    var myDog = new Animal("멍이", 6, "white");//Animal클래로부터 얻어진 객체2
     
+    myCat.cry("야옹야옹");
+
+    document.write("번호 : "+man1.num+", 이름 : "+man1.name);
+
     //사용자 정의 함수
-    function fnc1(){    //함수 선언 - 매개변수X, 리턴X
+    function fnc1(){ //함수 선언 - 매개변수X, 리턴 X
         document.write("함수1 호출<br>");
     }
     var fnc2 = function(x){ //함수 선언 - 매개변수O, 리턴X
         document.write("함수2 호출<br>");
-        document.write(x+"을 입력하셨습니다.<br>");
+        document.write(x+"를 입력하셨습니다.<br>");
     }
     function fnc3(){    //함수 선언 - 매개변수X, 리턴O
         document.write("함수3 호출<br>");
-        var i = prompt("숫자를 입력하세요 : \n");
+        var i = prompt("\n숫자를 입력하세요 : ");
         return i;
     }
-    function fnc4(x, y){    //함수 선언 - 매개변수O, 리턴O
+    function fnc4(x, y){  //함수 선언 - 매개변수O, 리턴O
         document.write("함수 4 호출<br>");
         return x+y;
     }
-    var a = fnc4(20,40);
+    var a = fnc4(20, 40);
     var b = fnc3();
+    document.write(a);
+    document.write(b);
     fnc2(40);
-    fnc1();
+    fnc1(); 
     </script>
 </head>
 <body>
