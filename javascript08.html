@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 08 - 데이터형 객체</title>
+</head>
+<body>
+    <script>
+    /*
+    내장 객체 : 
+        1) BOM(Browser Object Model) : 브라우저를 제어할 목적으로 내장된 객체 - window, location, history, screen, navigator
+        2) DOM(Document Object Model) : 문서를 구성하는 요소(Element)인 태그를 제어할 목적으로 내장된 객체 - document
+        3) 데이터형(멀티데이터 포함) 객체 : 변수나 객체에 저장된 데이터를 가공하고, 처리하고, 변형할 수 있도록 한 내장 객체 - Number, Math, Date, String, Array, Audio, Video, File ...
+    */
+    var x = 3.145978642;
+    var y = 8.854021357;
+    var z = 0x2c;
+    document.write("<br>x를 2진수로 변환 : "+x.toString(2));
+    document.write("<br>y를 2진수로 변환 : "+y.toString(2));
+    document.write("<br>z를 2진수로 변환 : "+z.toString(2));
+    document.write("<br>x를 8진수로 변환 : "+x.toString(8));
+    document.write("<br>y를 8진수로 변환 : "+y.toString(8));
+    document.write("<br>z를 8진수로 변환 : "+z.toString(8));
+    document.write("<br>x를 10진수로 변환 : "+x.toString(10));
+    document.write("<br>y를 10진수로 변환 : "+y.toString(10));
+    document.write("<br>z를 10진수로 변환 : "+z.toString(10));
+    document.write("<br>x를 16진수로 변환 : "+x.toString(16));
+    document.write("<br>y를 16진수로 변환 : "+y.toString(16));
+    document.write("<br>z를 16진수로 변환 : "+z.toString(16));
+
+    //전역 관련 Number 메소드
+    var a = "kang";
+    var b = "7777";
+    var c = 0;
+    var d = 100;
+    var e;
+    document.write("<br>b/d : "+(b/d)+" : "+Number.isInteger(b/d));
+    document.write("<br>a/d : "+(a/d)+" : "+Number.isNaN(a/d));
+    document.write("<br>c/d : "+(c/d));
+    document.write("<br>d/c : "+(d/c)+" : "+Number.isFinite(d/c));
+    document.write("<br>e/d : "+(e/d)+" : "+Number.isNaN(e/d));
+    document.write("<br>"+(typeof b)+"b 숫자로 변환"+Number.parseInt());
+
+
+    var arr1 = [30,50,70,40,90,5,75];
+    document.write("<br> 최소값 : "+Math.min(30,50,70,40,90,5,75));
+    document.write("<br> 최대값 : "+Math.max(30,50,70,40,90,5,75));
+    document.write("<br> 임의의 수 : "+Math.random());
+    document.write("<br> 루트(제곱근) 100의 값: "+Math.sqrt(100));
+    //Math 객체 관련 메소드 - 반드시 앞에 Math가 붙어야 함
+
+
+    //Date 객체 관련 메소드
+    date1 = new Date(); //오늘 날짜
+    document.write("<br>오늘날짜 : "+date1);
+    document.write("<br>연도 : "+date1.getFullYear());
+    document.write("<br>월 : "+(date1.getMonth()+1));   //0~11
+    w = ["일","월","화","수","목","금","토"];
+    document.write("<br>요일번호 : "+date1.getDay()); //0~6
+    document.write("<br>일 : "+date1.getDate());
+    
+    
+    //타이머 객체 = 전역객체
+
+    //String 객체 관련 메소드
+    var str1 = "나는 강병수 입니다.";
+    var str2 = "가나다라마바사\n아자차카타파하";
+    document.write("<br>str1의 글자수 : "+str1.length);
+    document.write("<br>"+String.fromCharCode(108,111,118,101));   //아스키코드(0~127)
+    document.write("<br>"+String.fromCodePoint(108,111,118,101));
+    document.write("<br>강의 인덱스 : "+str1.indexOf("강"));    //※위치 찾기
+    document.write("<br>몇 번째부터 몇 번째까지 글자 추출 : "+str2.slice(1,5));
+    document.write("<br>몇 번째부터 몇 번째까지 글자 추출 : "+str2.slice(-5,-2));
+    document.write("<br>몇 번째부터 몇 번째까지 글자 추출 : "+str2.substring(1,5)); //※시작값, 종료값
+    document.write("<br>몇 번째부터 몇 번째까지 글자 추출 : "+str2.substr(1,5));    //※시작값, 글자수
+    document.write("<br>분리하기 : "+str2.split("\n")); //분리
+    str5 = "NuA";
+    str6 = str5.concat("    Very, ", "nice");
+    document.write("<br> : " +str6);
+
+    //문자열에 대한 찾기의 경우는 search를 쓰시오.
+
+    //배열과 같은 집합체에서는 match를 쓰시오.
+
+
+    </script>
+</body>
+</html>
