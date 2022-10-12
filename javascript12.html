@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+<style>
+    * { margin: 0; padding: 0; }
+    h2 {clear: both; float: left;}
+    h2:after {content: ""; display:block; clear: both;}
+    input[type="input"]{clear: both; float: left;}
+    #display {clear: both; height: 50px; width: 445px; margin: 5px;} 
+    input[type="button"] {width: 100px; height: 50px; margin: 5px;}
+    input[class="long_btn"]{width:332px;}
+</style>
+
+    <title>자바스크립트 계산기</title>
+</head>
+<body>
+    <div class="container">
+        <h2>계산기</h2>
+        <form>
+            <input type="input" id="expression" readonly>
+            <div id="display"></div>
+            <hr>
+            <div class="btn_top_area">
+                <input type="button" value="7" onclick="compute(7)" />
+                <input type="button" value="8" onclick="compute(8)" />
+                <input type="button" value="9" onclick="compute(9)" />
+                <input type="button" value="AC" onclick="clear()" class="blue_btn"/>
+            </div>
+            <div class="btn_mid_area">
+                <input type="button" value="4" onclick="compute(4)" />
+                <input type="button" value="5" onclick="compute(5)" />
+                <input type="button" value="6" onclick="compute(6)" />
+                <input type="button" value="/" onclick="compute(/)" class="blue_btn"/>
+            </div>
+            <div class="btn_bottom_area">
+                <input type="button" value="1" onclick="compute(1)" />
+                <input type="button" value="2" onclick="compute(2)" />
+                <input type="button" value="3" onclick="compute(3)" />
+                <input type="button" value="*" onclick="compute('*')" class="blue_btn"/>
+            </div>
+            <div class="btn_out_area">
+                <input type="button" value="." onclick="compute('.')" class="blue_btn"/>
+                <input type="button" value="0" onclick="compute(0)" />
+                <input type="button" value="+" onclick="compute('+')" class="blue_btn"/>
+                <input type="button" value="-" onclick="compute('-')" class="blue_btn"/>
+            </div>  
+            <div class="btn_out2_area">  
+                <input type="button" value="=" onclick="result()" class="long_btn" />
+                <input type="button" value="OFF" onclick="off()" class="black_btn" />
+            </div>  
+         </form>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

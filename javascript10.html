@@ -9,6 +9,13 @@
 <body>
     <!--window, screen, location, history, navigator-->
     <button id="btn1" onclick="opener1()">버튼</button>
+    <button id="btn1" onclick="opener2()">네이버</button>
+    <button id="btn1" onclick="opener3()">javascript07</button>
+    <button id="btn1" onclick="opener4()">구글</button>
+    <button id="btn1" onclick="opener5()">뒤로</button>
+    <button id="btn1" onclick="opener6()">앞으로</button>
+    <button id="btn1" onclick="opener7()">2단계 뒤로</button>
+
     <script>
     document.write("<h2>Window 객체</h2>")
     for(var key in window){
@@ -46,6 +53,38 @@
         opener1();
     });*/
    
+    var opener2 = function(){
+        var sel = document.getElementById("sel1");
+        if(sel.value!="")
+        //location.href = sel.value; - 현재 창에
+        win2 = window.open(sel.value,"win1","width=400, height=300, left=300, top=100, scrollbars=no, menubar=no, status=no, toolbar=no, location=no") //새 창에
+    }
+    var opener3 = function(){
+        //location.href = "javascript11.html"; - 현재 창에
+        win3 = window.open("javascript07.html","win1","width=400, height=300, left=300, top=100, scrollbars=no, menubar=no, status=no, toolbar=no, location=no") //새 창에
+    }
+    function opener4(){
+        location.replace("https://www.google.com");
+    }
+    function opener5(){
+        history.back();
+    }
+    function opener6(){
+        history.forward();
+    }
+    function opener7(){
+        history.go(-2);
+    }
+
+    var movingBack = function(){
+        history.back(); //열어본 페이지 목록에서 이전 페이지의 url로 이동
+    }
+    var movingFront = function(){
+        history.forward();  //다음 페이지로
+    }
+    var movingTwoStep = function(){
+        history.go(-2); //2단계 이전 페이지로
+    }
     </script>
 </body>
 </html>
